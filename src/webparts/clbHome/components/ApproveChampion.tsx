@@ -1,32 +1,13 @@
 import { Label } from '@fluentui/react';
 import { Icon } from '@fluentui/react/lib/Icon';
-import { mergeStyleSets } from '@fluentui/react/lib/Styling';
 import { ISPHttpClientOptions, SPHttpClient, SPHttpClientResponse } from "@microsoft/sp-http";
 import { WebPartContext } from "@microsoft/sp-webpart-base";
 import { sp } from "@pnp/sp";
+import * as LocaleStrings from 'ClbHomeWebPartStrings';
 import * as React from "react";
 import siteconfig from "../config/siteconfig.json";
 import styles from "../scss/CMPApproveChampion.module.scss";
-import * as LocaleStrings from 'ClbHomeWebPartStrings';
 
-
-
-const classes = mergeStyleSets({
-  rejectIcon: {
-    marginRight: "10px",
-    fontSize: "17px",
-    fontWeight: "bolder",
-    color: "#000003",
-    opacity: 1
-  },
-  approveIcon: {
-    marginRight: "10px",
-    fontSize: "17px",
-    fontWeight: "bolder",
-    color: "#FFFFFF",
-    opacity: 1
-  }
-});
 
 export interface IClbChampionsListProps {
   context?: WebPartContext;
@@ -60,6 +41,7 @@ interface IState {
   selectedusers: Array<any>;
   siteUrl: string;
   memberrole: string;
+  selectedId: number;
 }
 class ApproveChampion extends React.Component<IClbChampionsListProps, IState> {
   constructor(props: IClbChampionsListProps) {
@@ -67,7 +49,6 @@ class ApproveChampion extends React.Component<IClbChampionsListProps, IState> {
     sp.setup({
       spfxContext: this.props.context,
     });
-
     this.state = {
       list: { value: [] },
       isAddChampion: false,
@@ -77,6 +58,7 @@ class ApproveChampion extends React.Component<IClbChampionsListProps, IState> {
       selectedusers: [],
       siteUrl: this.props.siteUrl,
       memberrole: "",
+      selectedId: null
     };
   }
 
@@ -116,7 +98,6 @@ class ApproveChampion extends React.Component<IClbChampionsListProps, IState> {
       .post(
         url,
         SPHttpClient.configurations.v1,
-
         spHttpClientOptions
       )
       .then((response: SPHttpClientResponse) => {
@@ -126,29 +107,35 @@ class ApproveChampion extends React.Component<IClbChampionsListProps, IState> {
           this.setState({
             UserDetails: [],
             isAddChampion: false,
-            list: { value: filteredItems }
+            list: { value: filteredItems },
+            selectedId: null
           });
           alert("Champion" + status);
         } else {
           if (status === 'Approved') {
             this.setState({
               approveMessage: LocaleStrings.ChampionApprovedMessage,
-              list: { value: filteredItems }
+              list: { value: filteredItems },
+              selectedId: null,
+              rejectMessage: ""
             });
           }
           if (status === 'Rejected') {
             this.setState({
               rejectMessage: LocaleStrings.ChampionRejectedMessage,
-              list: { value: filteredItems }
+              list: { value: filteredItems },
+              selectedId: null,
+              approveMessage: ""
             });
           }
         }
       });
+
   }
 
   public render() {
     return (
-      <div className="container">
+      <div className={`container ${styles.approveChampionContainer}`}>
         <div className={styles.approveChampionPath}>
           <img src={require("../assets/CMPImages/BackIcon.png")}
             className={styles.backImg}
@@ -176,58 +163,71 @@ class ApproveChampion extends React.Component<IClbChampionsListProps, IState> {
           </Label>
         }
         <div className={styles.listHeading}>{LocaleStrings.ChampionsListPageTitle}</div>
-        <table className="table table-bodered">
-          <thead className={styles.listHeader}>
-            <th>{LocaleStrings.PeopleNameGridHeader}</th>
-            <th>{LocaleStrings.RegionGridHeader}</th>
-            <th>{LocaleStrings.CountryGridHeader}</th>
-            <th>{LocaleStrings.FocusAreaGridHeader}</th>
-            <th>{LocaleStrings.GroupGridHeader}</th>
-            {!this.props.isEmp && <th>{LocaleStrings.StatusGridHeader}</th>}
-            <th>{LocaleStrings.ActionGridHeader}</th>
-          </thead>
-          <tbody className={styles.listBody}>
-            {this.state.list &&
-              this.state.list.value &&
-              this.state.list.value.length > 0 &&
-              this.state.list.value.map((item: ISPList) => {
-                if (item.Status != "Approved" && item.Status != "Rejected") {//showing only approved list
-                  return (
-                    <tr>
-                      <td>
-                        {item.FirstName}
-                        <span className="mr-1"></span>
-                        {item.LastName}
-                      </td>
-                      <td>{item.Region}</td>
-                      <td>{item.Country}</td>
-                      <td>{item.FocusArea}</td>
-                      <td>{item.Group}</td>
-                      {!this.props.isEmp && <td>{item.Status}</td>}
-                      <td>
-                        <button
-                          className={`btn ${styles.rejectBtn}`}
-                          onClick={e => this.updateItem("Reject", item.ID)}
-                          title={LocaleStrings.RejectButton}
-                        >
-                          <Icon iconName="ErrorBadge" className={`${classes.rejectIcon}`} />
-                          <span className={styles.rejectBtnLabel}>{LocaleStrings.RejectButton}</span>
-                        </button>
-                        <button
-                          className={`btn ${styles.approveBtn}`}
-                          onClick={e => this.updateItem("Approve", item.ID)}
-                          title={LocaleStrings.ApproveButton}
-                        >
-                          <Icon iconName="Completed" className={`${classes.approveIcon}`} />
-                          <span className={styles.approveBtnLabel}>{LocaleStrings.ApproveButton}</span>
-                        </button>
-                      </td>
-                    </tr>
-                  );
-                }
-              })}
-          </tbody>
-        </table>
+        <div className={styles.approveChampionTableArea}>
+          <table className="table table-bodered">
+            <thead className={styles.listHeader}>
+              <th title={LocaleStrings.Select}>{LocaleStrings.Select}</th>
+              <th title={LocaleStrings.PeopleNameGridHeader}>{LocaleStrings.PeopleNameGridHeader}</th>
+              <th title={LocaleStrings.RegionGridHeader}>{LocaleStrings.RegionGridHeader}</th>
+              <th title={LocaleStrings.CountryGridHeader}>{LocaleStrings.CountryGridHeader}</th>
+              <th title={LocaleStrings.FocusAreaGridHeader}>{LocaleStrings.FocusAreaGridHeader}</th>
+              <th title={LocaleStrings.GroupGridHeader}>{LocaleStrings.GroupGridHeader}</th>
+              {!this.props.isEmp && <th>{LocaleStrings.StatusGridHeader}</th>}
+            </thead>
+            <tbody className={styles.listBody}>
+              {this.state.list &&
+                this.state.list.value &&
+                this.state.list.value.length > 0 &&
+                this.state.list.value.map((item: ISPList) => {
+                  if (item.Status != "Approved" && item.Status != "Rejected") {//showing only approved list
+                    return (
+                      <tr>
+                        <td>
+                          <input
+                            type="radio"
+                            name="ApproveOrRejectChampion"
+                            onChange={() => { this.setState({ selectedId: item.ID }); }}
+                            checked={this.state.selectedId === item.ID}
+                          /></td>
+                        <td title={`${item.FirstName ? item.FirstName + " " : ""}${item.LastName ? item.LastName : ""}`}>
+                          {item.FirstName}
+                          <span className="mr-1"></span>
+                          {item.LastName}
+                        </td>
+                        <td title={item.Region ? item.Region : ""}>{item.Region}</td>
+                        <td title={`${item.Country ? item.Country : ""}`}>{item.Country}</td>
+                        <td title={`${item.FocusArea ? item.FocusArea : ""}`}>{`${item.FocusArea ? item.FocusArea : ""}`}</td>
+                        <td title={`${item.Group ? item.Group : ""}`}>{item.Group}</td>
+                        {!this.props.isEmp && <td>{item.Status}</td>}
+                      </tr>
+                    );
+                  }
+                })}
+            </tbody>
+          </table>
+        </div>
+        {this.state.list.value.filter((item) => item.Status != "Approved" && item.Status != "Rejected").length > 0 &&
+          <div className={styles.manageChampionBtnArea}>
+            <button
+              className={`btn ${styles.approveBtn}`}
+              onClick={e => this.updateItem("Approve", this.state.selectedId)}
+              title={LocaleStrings.ApproveButton}
+              disabled={this.state.selectedId === null}
+            >
+              <Icon iconName="Completed" className={styles.approveBtnIcon} />
+              <span className={styles.approveBtnLabel}>{LocaleStrings.ApproveButton}</span>
+            </button>
+            <button
+              className={"btn " + styles.rejectBtn}
+              onClick={e => this.updateItem("Reject", this.state.selectedId)}
+              title={LocaleStrings.RejectButton}
+              disabled={this.state.selectedId === null}
+            >
+              <Icon iconName="ErrorBadge" className={styles.rejectBtnIcon} />
+              <span className={styles.rejectBtnLabel}>{LocaleStrings.RejectButton}</span>
+            </button>
+          </div>
+        }
         {this.state.list &&
           this.state.list.value &&
           this.state.list.value.length > 0 &&

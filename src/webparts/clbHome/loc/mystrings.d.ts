@@ -73,6 +73,7 @@ declare interface IClbHomeWebPartStrings {
   UserNominatedMessage: string;
   UserAddedMessage: string;
   PeopleNameGridHeader: string;
+  Select: string;
   RegionGridHeader: string;
   CountryGridHeader: string;
   GroupGridHeader: string;
@@ -158,6 +159,17 @@ declare interface IClbHomeWebPartStrings {
 
   //Employee View
   SearchLabel: string;
+  ActivitiesLabel: string;
+  RegionLabel: string;
+  FocusAreaLabel: string;
+  ShowMoreLabel: string;
+  ViewActivitiesLabel: string;
+  ChatIconLabel: string;
+  RequestToCallLabel: string;
+  EmailIconLabel: string;
+  MeetupSubject: string;
+  MeetupBody: string;
+  NoActivitiesinGridLabel: string;
 
   //----------------------------------------------------------------------------------------
 
@@ -167,6 +179,7 @@ declare interface IClbHomeWebPartStrings {
   CreateTournamentPageTitle: string;
   CreateTournamentSuccessLabel: string;
   TournamentNameLabel: string;
+  TournamentNamePlaceHolderLabel: string;
   TournamentNameErrorLabel: string;
   TournamentDescriptionLabel: string;
   TournamentDescPlaceHolderLabel: string;
@@ -174,7 +187,35 @@ declare interface IClbHomeWebPartStrings {
   TeamsActionInfoToolTip: string;
   ActionErrorLabel: string;
   CreateTournamentButton: string;
-  DuplicateTournamentNameError: string;
+  DuplicateTournamentNameError: string;  
+  CreateTournamentsButton: string;
+  SingleTournamentLabel: string;
+  MultipleTournamentLabel: string;
+  MultiTournamentStep: string;
+  MultiTournamentStep1LinkLabel: string;
+  MultiTournamentStep1Text: string;
+  MultiTournamentStep2: string;
+  MultiTournamentStep3: string;
+  UploadFileButton: string;
+  RemoveFileLabel: string;
+  ImportSpinnerMessage: string;
+  ErrorMsgTournamentList: string;
+  ErrorMsgActionsList: string;
+  ErrorMsgTournamentActionsList: string;
+  LogMsgTournamentExists: string;
+  LogMsgDone: string;
+  LogMsgInvalidTournamentName: string;
+  LogMsgInvalidTemplate: string;
+  LogMsgMultipleTournaments: string;
+  LogMsgBlankSheet: string;
+  LogProgress: string;
+  ImportRule1: string;
+  ImportRule2: string;
+  ImportRule3: string;
+  ImportRule4: string;
+  ImportRule5: string;
+  ImportRule6: string;
+  ImportRule7: string;
 
   //TOT Common
   TOTBreadcrumbLabel: string;
@@ -208,7 +249,6 @@ declare interface IClbHomeWebPartStrings {
   StartTournamentHeaderLabel: string;
   NoTournamentMessage: string;
   SelectTournamentMessage: string;
-  NoActiveTournamentMessage: string;
   SelectEndTournamentMessage: string;
   StartTournamentButton: string;
   EndTournamentSuccessMessage: string;

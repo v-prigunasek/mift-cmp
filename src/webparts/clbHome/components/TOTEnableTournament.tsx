@@ -9,48 +9,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 //Fluent UI controls
-import { IButtonStyles, IChoiceGroupStyles, PrimaryButton, Spinner, SpinnerSize } from "@fluentui/react";
+import { PrimaryButton, Spinner, SpinnerSize } from "@fluentui/react";
 import { Label } from "@fluentui/react/lib/Label";
 import { ChoiceGroup, IChoiceGroupOption } from "@fluentui/react";
 import { Dialog, DialogType, DialogFooter } from "@fluentui/react/lib/Dialog";
-import { IIconProps } from '@fluentui/react/lib/Icon';
 import * as LocaleStrings from 'ClbHomeWebPartStrings';
 
 //Global Variables
 let commonServiceManager: commonServices;
-const backIcon: IIconProps = { iconName: 'NavigateBack' };
-
-const backBtnStyles: Partial<IButtonStyles> = {
-  root: {
-    borderColor: "#33344A",
-    backgroundColor: "white",
-    height: "auto"
-  },
-  rootHovered: {
-    borderColor: "#33344A",
-    backgroundColor: "white",
-    color: "#000003"
-  },
-  rootPressed: {
-    borderColor: "#33344A",
-    backgroundColor: "white",
-    color: "#000003"
-  },
-  icon: {
-    fontSize: "17px",
-    fontWeight: "bolder",
-    color: "#000003",
-    opacity: 1
-  },
-  label: {
-    font: "normal normal bold 14px/24px Segoe UI",
-    letterSpacing: "0px",
-    color: "#000003",
-    opacity: 1,
-    marginTop: "-3px"
-  }
-};
-
 export interface IEnableTournamentProps {
   context?: WebPartContext;
   siteUrl: string;
@@ -77,52 +43,6 @@ interface IEnableTournamentState {
   tournamentAction: string;
   showSpinner: boolean;
 }
-
-const endButtonStyles: Partial<IButtonStyles> = {
-  root: {
-    marginTop: "32px",
-    marginBottom: "20px",
-    height: "38px"
-  },
-  textContainer: { fontSize: "16px" },
-  icon: {
-    fontSize: "26px",
-    fontWeight: "bolder",
-    color: "#FFFFFF",
-    opacity: 1
-  }
-};
-
-const startButtonStyles: Partial<IButtonStyles> = {
-  root: {
-    height: "38px"
-  },
-  textContainer: { fontSize: "16px" },
-  icon: {
-    fontSize: "18px",
-    fontWeight: "bolder",
-    color: "#FFFFFF",
-    opacity: 1
-  }
-};
-
-const choiceGroupStyles: Partial<IChoiceGroupStyles> = {
-  flexContainer: [
-    {
-      selectors: {
-        ".ms-ChoiceField": {
-          textAlign: "left",
-          font: "normal normal 600 18px/20px Segoe UI",
-          letterSpacing: "0px",
-          color: "#727170",
-          opacity: 1
-        }
-      }
-    }
-  ]
-};
-
-
 export default class TOTEnableTournament extends React.Component<
   IEnableTournamentProps,
   IEnableTournamentState
@@ -495,7 +415,7 @@ export default class TOTEnableTournament extends React.Component<
           >
             {LocaleStrings.TOTBreadcrumbLabel}
           </span>
-          <span className={styles.border}></span>
+          <span className={styles.border} />
           <span className={styles.manageTournamentLabel}>{LocaleStrings.ManageTournamentsPageTitle}</span>
         </div>
         <h5 className={styles.pageHeader}>{LocaleStrings.ManageTournamentsPageTitle}</h5>
@@ -566,7 +486,7 @@ export default class TOTEnableTournament extends React.Component<
                 <ChoiceGroup
                   onChange={this.onActiveTournamentSelect.bind(this)}
                   options={this.state.activeTournamentsList}
-                  styles={choiceGroupStyles}
+                  className={styles.manageTrmntChoiceGrp}
                 />
               }
               {!this.state.activeTournamentFlag && (
@@ -596,9 +516,8 @@ export default class TOTEnableTournament extends React.Component<
                   }}
                   text={LocaleStrings.EndTournamentButton}
                   title={LocaleStrings.EndTournamentButton}
-                  styles={endButtonStyles}
                   onClick={this.endTournament}
-                  className={this.state.showSpinner ? styles.disabledBtn : styles.completeBtn}
+                  className={this.state.showSpinner ? styles.disabledBtn + " " + styles.endTrmntBtn : styles.completeBtn + " " + styles.endTrmntBtn}
                   disabled={this.state.showSpinner}
                 />
               )}
@@ -616,7 +535,7 @@ export default class TOTEnableTournament extends React.Component<
                 <ChoiceGroup
                   onChange={this.onTournamentSelect.bind(this)}
                   options={this.state.tournamentsList}
-                  styles={choiceGroupStyles}
+                  className={styles.manageTrmntChoiceGrp}
                 />
               }
               {this.state.noTournamentsFlag && (
@@ -641,7 +560,6 @@ export default class TOTEnableTournament extends React.Component<
                     iconProps={{
                       iconName: "Play"
                     }}
-                    styles={startButtonStyles}
                     onClick={this.startTournament}
                     className={styles.enableBtn}
                   />
@@ -650,9 +568,9 @@ export default class TOTEnableTournament extends React.Component<
                 <PrimaryButton
                   text={LocaleStrings.BackButton}
                   title={LocaleStrings.BackButton}
-                  iconProps={backIcon}
-                  styles={backBtnStyles}
+                  iconProps={{ iconName: 'NavigateBack' }}
                   onClick={() => this.props.onClickCancel()}
+                  className={styles.manageTrmntBackBtn}
                 />
               </div>
             </Col>
