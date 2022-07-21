@@ -291,7 +291,7 @@ export default class ChampionvView extends Component<
       let selectedVal: any = null;
       tmp = this.state.edetailsIds;
       let scount = link.Count * 10;
-      let item1 = tmp.filter((i) => i.Id === link.eventid);
+      let filteredItem = tmp.filter((i) => i.Id === link.eventid);
       let seventid = String(link.eventid);
       let smemberid = String(link.memberid);
       let sdoe = link.DateOfEvent;
@@ -301,8 +301,8 @@ export default class ChampionvView extends Component<
       let sMemberName = oMember.FirstName + ' ' + oMember.LastName;
       let seventName = this.state.edetailsIds.filter(x => x.Id.toString() == seventid)[0].Title;
 
-      if (item1.length != 0) {
-        scount = link.Count * item1[0].Ecount;
+      if (filteredItem.length != 0) {
+        scount = link.Count * filteredItem[0].Ecount;
       }
       if (true) {
         const listDefinition: any = {
@@ -529,12 +529,12 @@ export default class ChampionvView extends Component<
     let tmp: Array<EventList> = null;
     let selectedVal: any = null;
     tmp = this.state.edetailsIds;
-    let item1 = tmp.filter((i) => i.Title === ca);
-    if (item1.length != 0) {
+    let filteredItem = tmp.filter((i) => i.Title.trim() === ca.trim());
+    if (filteredItem.length != 0) {
       this.setState({
         selectedkey: 1,
-        type: item1[0].Title,
-        eventid: item1[0].Id,
+        type: filteredItem[0].Title,
+        eventid: filteredItem[0].Id,
         memberid: localStorage["memberid"],
       });
     } else {
@@ -559,7 +559,6 @@ export default class ChampionvView extends Component<
     const onRenderCaretDown = (): JSX.Element => {
       return <span></span>;
     };
-
     return (
       <form>
         <div className="Championview d-flex ">
@@ -627,6 +626,8 @@ export default class ChampionvView extends Component<
                               ariaLabel="Select a date"
                               onSelectDate={this.onChange}
                               value={this.state.DateOfEvent}
+                              calloutProps={{ className: "cvDatePickerCallout" }}
+                              calendarProps={{ className: "calendarProps", strings: null }}
                               styles={{ callout: { selectors: { '& .ms-DatePicker-day--outfocus': { color: "#757575" } } } }}
                             />
                             <div
@@ -635,10 +636,10 @@ export default class ChampionvView extends Component<
                                 label={LocaleStrings.EventTypeGridLabel}
                                 placeholder={LocaleStrings.EventTypeGridLabelPlaceHolder}
                                 onChange={(evt) => this.handleSelect(evt)}
-                                id="drp"
                                 options={this.options()}
                                 onRenderCaretDown={onRenderCaretDown}
                                 styles={{ title: { color: "#757575" } }}
+                                calloutProps={{ className: "cvEventTypeDropdown" }}
                               />
                             </div>
                             <div className={`${cx("col-md-2")} cv-margin-auto cv-padding-right`}>

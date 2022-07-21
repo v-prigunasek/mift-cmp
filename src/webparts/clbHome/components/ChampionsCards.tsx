@@ -122,7 +122,7 @@ export default class ChampionsCards extends Component<
       if (this.state.selectedRegion != constants.AllLabel && this.state.selectedFocusArea != constants.AllLabel && this.state.search == "") {
         this.setState({
           filteredUsers: this.state.users.filter((user) => user.Region === this.state.selectedRegion &&
-            user.FocusArea.toString().includes(this.state.selectedFocusArea))
+            user.FocusArea?.toString().includes(this.state.selectedFocusArea))
         });
       } else if (this.state.selectedRegion != constants.AllLabel && this.state.selectedFocusArea == constants.AllLabel && this.state.search == "") {
         this.setState({
@@ -130,7 +130,7 @@ export default class ChampionsCards extends Component<
         });
       } else if (this.state.selectedRegion == constants.AllLabel && this.state.selectedFocusArea != constants.AllLabel && this.state.search == "") {
         this.setState({
-          filteredUsers: this.state.users.filter((user) => user.FocusArea.toString().includes(this.state.selectedFocusArea))
+          filteredUsers: this.state.users.filter((user) => user.FocusArea?.toString().includes(this.state.selectedFocusArea))
         });
       } else if (this.state.selectedRegion == constants.AllLabel && this.state.selectedFocusArea == constants.AllLabel && this.state.search == "") {
         this.setState({
@@ -140,7 +140,7 @@ export default class ChampionsCards extends Component<
         this.setState({
           filteredUsers: this.state.users.filter((user) =>
             user.Region === this.state.selectedRegion &&
-            user.FocusArea.toString().includes(this.state.selectedFocusArea) &&
+            user.FocusArea?.toString().includes(this.state.selectedFocusArea) &&
             ((user.FirstName &&
               user.FirstName.toLowerCase().includes(this.state.search.toLowerCase())) ||
               (user.LastName &&
@@ -148,7 +148,7 @@ export default class ChampionsCards extends Component<
               (user.Country &&
                 user.Country.toLowerCase().includes(this.state.search.toLowerCase())) ||
               (user.FocusArea &&
-                user.FocusArea.toString().toLowerCase().includes(this.state.search.toLowerCase())) ||
+                user.FocusArea?.toString().toLowerCase().includes(this.state.search.toLowerCase())) ||
               (user.Region &&
                 user.Region.toLowerCase().includes(this.state.search.toLowerCase())) ||
               (user.Group && user.Group.toLowerCase().includes(this.state.search.toLowerCase()))))
@@ -163,7 +163,7 @@ export default class ChampionsCards extends Component<
               (user.Country &&
                 user.Country.toLowerCase().includes(this.state.search.toLowerCase())) ||
               (user.FocusArea &&
-                user.FocusArea.toString().toLowerCase().includes(this.state.search.toLowerCase())) ||
+                user.FocusArea?.toString().toLowerCase().includes(this.state.search.toLowerCase())) ||
               (user.Region &&
                 user.Region.toLowerCase().includes(this.state.search.toLowerCase())) ||
               (user.Group && user.Group.toLowerCase().includes(this.state.search.toLowerCase()))))
@@ -171,7 +171,7 @@ export default class ChampionsCards extends Component<
       } else if (this.state.selectedRegion == constants.AllLabel && this.state.selectedFocusArea != constants.AllLabel && this.state.search != "") {
         this.setState({
           filteredUsers: this.state.users.filter((user) =>
-            user.FocusArea.toString().includes(this.state.selectedFocusArea) &&
+            user.FocusArea?.toString().includes(this.state.selectedFocusArea) &&
             ((user.FirstName &&
               user.FirstName.toLowerCase().includes(this.state.search.toLowerCase())) ||
               (user.LastName &&
@@ -179,7 +179,7 @@ export default class ChampionsCards extends Component<
               (user.Country &&
                 user.Country.toLowerCase().includes(this.state.search.toLowerCase())) ||
               (user.FocusArea &&
-                user.FocusArea.toString().toLowerCase().includes(this.state.search.toLowerCase())) ||
+                user.FocusArea?.toString().toLowerCase().includes(this.state.search.toLowerCase())) ||
               (user.Region &&
                 user.Region.toLowerCase().includes(this.state.search.toLowerCase())) ||
               (user.Group && user.Group.toLowerCase().includes(this.state.search.toLowerCase()))))
@@ -194,7 +194,7 @@ export default class ChampionsCards extends Component<
             (user.Country &&
               user.Country.toLowerCase().includes(this.state.search.toLowerCase())) ||
             (user.FocusArea &&
-              user.FocusArea.toString().toLowerCase().includes(this.state.search.toLowerCase())) ||
+              user.FocusArea?.toString().toLowerCase().includes(this.state.search.toLowerCase())) ||
             (user.Region &&
               user.Region.toLowerCase().includes(this.state.search.toLowerCase())) ||
             (user.Group && user.Group.toLowerCase().includes(this.state.search.toLowerCase())))

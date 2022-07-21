@@ -167,6 +167,27 @@
 
 .dropdownCol {
   padding: 0.5em;
+
+  div[class^="ms-ComboBox"] {
+
+    button:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.totLbComboCallout {
+  div[class^="ms-Callout-main"] {
+    div[class^="ms-ComboBox-optionsContainerWrapper"] {
+      div[class^="ms-ComboBox-optionsContainer"] {
+
+        button:focus,
+        button:hover {
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
 }
 
 .labelCol {

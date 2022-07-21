@@ -1,3 +1,13 @@
+:global {
+  label {
+
+    .ms-Checkbox-checkbox,
+    .ms-Checkbox-checkbox:hover {
+      border-color: rgb(97, 97, 97) !important;
+    }
+  }
+}
+
 .container {
   height: 100%;
   width: 100%;
@@ -114,10 +124,18 @@
 .saveBtn {
   background-color: #464775;
   border-color: #464775;
+  color: #ffffff;
+
+  i {
+    color: #ffffff;
+  }
 }
 
 .saveBtn:hover {
   background-color: #464775 !important;
+  border-color: #464775 !important;
+  color: #ffffff !important;
+  opacity: 0.9 !important;
 }
 
 .btnArea {
@@ -170,6 +188,27 @@
 
 .dropdownCol {
   padding: 0.5em;
+
+  div[class^="ms-ComboBox"] {
+
+    button:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.totMdbComboCallout {
+  div[class^="ms-Callout-main"] {
+    div[class^="ms-ComboBox-optionsContainerWrapper"] {
+      div[class^="ms-ComboBox-optionsContainer"] {
+
+        button:focus,
+        button:hover {
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
 }
 
 .labelCol {

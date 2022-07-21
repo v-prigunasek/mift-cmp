@@ -490,7 +490,7 @@ export default class Sidebar extends React.Component<ISidebarStateProps, IState>
     let usersave = this.state.currentUser;
     usersave.Country = this.state.memberData.country;
     usersave.Region = this.state.memberData.region;
-    usersave.FocusArea = this.state.selectedFocusAreas;
+    usersave.FocusArea = this.state.selectedFocusAreas.length > 0 ? this.state.selectedFocusAreas : [stringsConstants.TeamWorkLabel];
     usersave.Group = this.state.memberData.group;
     usersave.Role = "Champion";
     usersave.Status = "Pending";
@@ -748,6 +748,7 @@ export default class Sidebar extends React.Component<ISidebarStateProps, IState>
                     styles={this.dropdownStyles}
                     onRenderCaretDown={this.onRenderCaretDown}
                     defaultValue={this.state.currentUser.Region}
+                    calloutProps={{ className: "nonMemberDdCallout" }}
                   />
                   <label htmlFor="Country" className="bc-label">
                     {LocaleStrings.CountryGridHeader}
@@ -761,6 +762,7 @@ export default class Sidebar extends React.Component<ISidebarStateProps, IState>
                     styles={this.dropdownStyles}
                     onRenderCaretDown={this.onRenderCaretDown}
                     defaultValue={this.state.currentUser.Country}
+                    calloutProps={{ className: "nonMemberDdCallout" }}
                   />
                   <label htmlFor="Focus Area" className="bc-label">
                     {LocaleStrings.FocusAreaGridHeader}
@@ -774,7 +776,7 @@ export default class Sidebar extends React.Component<ISidebarStateProps, IState>
                     defaultValue={this.state.currentUser.FocusArea}
                     multiSelect
                     selectedKeys={this.state.multiSelectChoices}
-
+                    calloutProps={{ className: "nonMemberDdCallout" }}
                   />
                   <label htmlFor="Group" className="bc-label">
                     {LocaleStrings.GroupGridHeader}
@@ -786,6 +788,7 @@ export default class Sidebar extends React.Component<ISidebarStateProps, IState>
                     styles={this.dropdownStyles}
                     onRenderCaretDown={this.onRenderCaretDown}
                     defaultValue={this.state.currentUser.Group}
+                    calloutProps={{ className: "nonMemberDdCallout" }}
                   />
                   <Button
                     className="sub-btn"

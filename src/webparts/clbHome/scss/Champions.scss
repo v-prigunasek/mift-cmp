@@ -1,9 +1,33 @@
 .championRegionCallout {
     width: 200px;
+
+    div[class^="ms-Callout-main"] {
+        div[class^="ms-ComboBox-optionsContainerWrapper"] {
+            div[class^="ms-ComboBox-optionsContainer"] {
+
+                button:focus,
+                button:hover {
+                    background-color: transparent !important;
+                }
+            }
+        }
+    }
 }
 
 .championFocusAreaCallout {
     width: 200px;
+
+    div[class^="ms-Callout-main"] {
+        div[class^="ms-ComboBox-optionsContainerWrapper"] {
+            div[class^="ms-ComboBox-optionsContainer"] {
+
+                button:focus,
+                button:hover {
+                    background-color: transparent !important;
+                }
+            }
+        }
+    }
 }
 
 .championsFilterArea {
@@ -36,6 +60,10 @@
 
                 .ms-ComboBox {
                     width: 200px !important;
+
+                    .ms-ComboBox-CaretDown-button:hover {
+                        background-color: transparent;
+                    }
                 }
             }
         }
@@ -58,6 +86,10 @@
 
             .ms-ComboBox {
                 width: 200px;
+
+                .ms-ComboBox-CaretDown-button:hover {
+                    background-color: transparent;
+                }
             }
         }
     }
@@ -67,6 +99,12 @@
 
         .championSearchbox {
             width: 300px;
+
+            .ms-SearchBox-clearButton {
+                button:hover {
+                    background-color: transparent;
+                }
+            }
         }
     }
 

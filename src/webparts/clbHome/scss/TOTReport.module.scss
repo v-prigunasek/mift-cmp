@@ -9,6 +9,11 @@
 
             .ms-ComboBox-option {
                 color: #000000 !important;
+                background-color: #ffffff;
+            }
+
+            .ms-ComboBox-option:hover {
+                background-color: #E8E8E8;
             }
         }
     }
@@ -100,11 +105,11 @@
 
     input {
         background-color: #ffffff;
-        color: #000000
+        color: #757575;
     }
 
     input:hover {
-        color: #000000
+        color: #757575;
     }
 
     button,
@@ -118,7 +123,9 @@
     border-radius: 3px;
 }
 
-
+.totReportDropdown>div:hover::after {
+    border-color: #888686;
+}
 
 .dDInfoIconArea {
     margin-left: 15px;

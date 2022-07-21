@@ -188,7 +188,7 @@ export default class TOTReport extends React.Component<ITOTReportProps, ITOTRepo
                         totalActivities: totalTournamentActivities,
                         totalPoints: totalTournamentPoints,
                         totalParticipants: totalTournamentParticipants,
-                        totalCompletionPercentage: totalPercentage
+                        totalCompletionPercentage: isNaN(totalPercentage) ? 0 : totalPercentage
                     });
                 }
             }

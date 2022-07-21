@@ -118,6 +118,11 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     cursor: pointer;
     font-size: 14px;
+    opacity: 1;
+  }
+
+  label:hover {
+    opacity: 0.9;
   }
 }
 
@@ -251,6 +256,17 @@
 .createBtn {
   background-color: #6264A7;
   border-color: #6264A7;
+  color: #ffffff !important;
+
+  i {
+    color: #ffffff !important;
+  }
+}
+
+.createBtn:hover {
+  background-color: #6264A7 !important;
+  border-color: #6264A7 !important;
+  opacity: 0.9;
 }
 
 .disabledBtn {

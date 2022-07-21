@@ -18,6 +18,11 @@
     margin-bottom: 12px;
   }
 
+  a:hover,
+  .infoCalloutLink:hover {
+    color: rgb(98, 100, 167);
+  }
+
   .infoCalloutLinkFont {
     font-size: 16px;
   }
@@ -36,6 +41,7 @@
       margin-bottom: 0% !important;
 
       .white {
+        display: flex;
 
         .clbHeaderLogo {
           margin-left: 41px;
@@ -55,39 +61,32 @@
 
       }
 
-      .infoNavItem {
+      .navIconArea {
+        display: flex;
         margin-left: auto;
-        margin-right: 1%;
-      }
-
-      .cmpHeaderTooltipHostStyle {
-        display: inline-block;
-        cursor: pointer;
-      }
-
-      .icon {
-        padding-right: 20px;
+        margin-right: 0;
+        margin-top: 6px;
+        justify-content: space-around;
+        width: 130px;
 
         .infoIcon,
-        .supportIcon {
-          font-size: 20px;
-          color: #FFFFFF;
-          opacity: 1;
-          cursor: pointer;
-        }
-      }
-
-      .fbIconArea {
-        padding-right: 15px;
-        padding-left: 8px;
-        padding-bottom: 6px;
-
+        .supportIcon,
         .feedbackIcon {
           font-size: 20px;
           color: #FFFFFF;
           opacity: 1;
           cursor: pointer;
         }
+
+        .feedbackIcon {
+          position: relative;
+          bottom: 2px;
+        }
+      }
+
+      .cmpHeaderTooltipHostStyle {
+        display: inline-block;
+        cursor: pointer;
       }
     }
 
@@ -248,24 +247,23 @@
 
           .clbHeading {
             margin-left: 11px;
-            font: normal normal bold 15px/21px Segoe UI;
+            font: normal normal 700 15px/27px Segoe UI;
+            margin-top: 2px;
           }
         }
 
-        .icon {
-          margin-top: 7px;
-          padding-right: 15px;
+        .navIconArea {
+          margin-top: 6px;
 
-          i {
+          .infoIcon,
+          .supportIcon,
+          .feedbackIcon {
             font-size: 16px;
           }
-        }
 
-        .fbIcon {
-          padding: 3px 3px 0 2px;
-
-          i {
-            font-size: 16px;
+          .feedbackIcon {
+            position: relative;
+            bottom: 2px;
           }
         }
       }

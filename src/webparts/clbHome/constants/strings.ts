@@ -85,6 +85,9 @@ export const TOTErrorMessage = "An unexpected error occurred ";
 export const AdminList = "ToT Admins";
 export const UserActionsList = "User Actions";
 export const employeeCardLoadCount = 30;
+export const approvedStatus = "Approved";
+export const rejectedStatus = "Rejected";
+export const pendingStatus = "Pending";
 
 //Label Messages
 export const NoActiveTournamentMessage = "There is no active tournament at the moment. Please check back later.";
@@ -100,7 +103,7 @@ export const NoActiveParticipantsMessage = "There are no active participants at 
 //export const MultiTournamentTemplateURL ="https://raw.githubusercontent.com/OfficeDev/microsoft-teams-apps-champion-management/main/src/webparts/clbHome/assets/TournamentsTemplate/CreateMultipleTournaments-Template.xlsx"";
 
 //For testing
-export const MultiTournamentTemplateURL ="https://raw.githubusercontent.com/v-prigunasek/microsoft-teams-apps-tournament-of-teams/main/src/webparts/totHome/assets/CreateMultipleTournaments-Template.xlsx";
+export const MultiTournamentTemplateURL = "https://raw.githubusercontent.com/v-prigunasek/microsoft-teams-apps-tournament-of-teams/main/src/webparts/totHome/assets/CreateMultipleTournaments-Template.xlsx";
 
 //Header
 export const M365Champions = "https://aka.ms/m365champions";
@@ -141,12 +144,12 @@ export const RegionColumn = "Region";
 export const FocusAreaColumn = "FocusArea";
 
 //Import Tournaments Excel header names
-export const TournamentNameHeader ="TournamentName";
-export const DescriptionHeader="Description";
-export const CategoryHeader="Category";
-export const ActionHeader="Action";
-export const ActionDescriptionHeader="ActionDescription";
-export const PointsHeader="Points";
-export const HelpURLHeader="HelpURL";
+export const TournamentNameHeader = "TournamentName";
+export const DescriptionHeader = "Description";
+export const CategoryHeader = "Category";
+export const ActionHeader = "Action";
+export const ActionDescriptionHeader = "ActionDescription";
+export const PointsHeader = "Points";
+export const HelpURLHeader = "HelpURL";
 
 export const ImportTournamentLimit = 10; 

@@ -1,3 +1,7 @@
+.panelArea {
+  background-color: #FFFFFF !important;
+}
+
 .digitalBadgePath {
   display: inline-flex;
   margin-bottom: 25px;
@@ -137,12 +141,28 @@
   }
 }
 
-.acceptIcon {
-  margin-right: 10px;
-  font-size: 16px;
-  font-weight: bolder;
-  color: #FFFFFF;
-  opacity: 1;
+.acceptBtn {
+  background-color: #6264A7 !important;
+  border-color: #6264A7 !important;
+  color: #FFFFFF !important;
+
+  .acceptIcon {
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bolder;
+    color: #FFFFFF;
+    opacity: 1;
+  }
+}
+
+.acceptBtn:hover {
+  background-color: #6264A7 !important;
+  opacity: 0.9 !important;
+}
+
+.acceptBtn:focus:enabled {
+  outline: none !important;
+  outline-offset: none;
 }
 
 .badgeDetailsHeading {
@@ -172,8 +192,29 @@
       margin-top: 10%;
 
       .applyBtn {
+        background-color: #6264A7 !important;
+        border-color: #6264A7 !important;
+        color: #FFFFFF;
         border: none !important;
         padding: 0.4rem !important;
+
+        .acceptIcon {
+          margin-right: 10px;
+          font-size: 16px;
+          font-weight: bolder;
+          color: #FFFFFF;
+          opacity: 1;
+        }
+      }
+
+      .applyBtn:hover {
+        background-color: #6264A7 !important;
+        opacity: 0.9 !important;
+      }
+
+      .applyBtn:focus:enabled {
+        outline: none !important;
+        outline-offset: none;
       }
 
       .downloadArea {
@@ -181,14 +222,33 @@
         width: 50%;
 
         .downloadBtn {
+          background-color: #6264A7 !important;
+          border-color: #6264A7 !important;
+          color: #FFFFFF;
           border: none !important;
           padding: 0.4rem !important;
 
           i {
+            color: #FFFFFF;
             font-size: 16px;
             font-weight: bolder;
             opacity: 1
           }
+        }
+
+        .downloadBtn:hover {
+          background-color: #6264A7 !important;
+          opacity: 0.9 !important;
+        }
+
+        .downloadBtn:focus:enabled {
+          outline: none !important;
+          outline-offset: none;
+        }
+
+        .downloadBtn:disabled {
+          background-color: #6264A7 !important;
+          opacity: 0.9 !important;
         }
       }
     }

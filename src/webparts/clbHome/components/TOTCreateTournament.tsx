@@ -470,7 +470,7 @@ export default class TOTCreateTournament extends React.Component<
                         break;
                     } else {
                       //If tournament already exists in Tournaments List
-                      this.setState({ importLogs: this.state.importLogs.concat(sheetName + ": " + LocaleStrings.LogMsgTournamentExists) });
+                      this.setState({ importLogs: this.state.importLogs.concat(sheetName + ": " + LocaleStrings.LogMsgTournamentExists + " '" + tournamentName + "' " + LocaleStrings.LogMsgTournamentExists1) });
                       break;
                     }
                   }
@@ -583,7 +583,7 @@ export default class TOTCreateTournament extends React.Component<
                       }
                     });
                   if (responseStatus)
-                    this.setState({ importLogs: this.state.importLogs.concat(sheetName + ": " + LocaleStrings.LogMsgDone) });
+                    this.setState({ importLogs: this.state.importLogs.concat(sheetName + ": " + LocaleStrings.LogMsgDone + " '" + tournamentName + "' " + LocaleStrings.LogMsgDone1)});
                 }
               } else {
                 //If 'Tournament Name' is empty
@@ -681,7 +681,7 @@ export default class TOTCreateTournament extends React.Component<
       || message === LocaleStrings.ErrorMsgTournamentActionsList.trim()) {
       return styles.errorRed;
     }
-    else if (message === LocaleStrings.LogMsgDone.trim()) {
+    else if (message.includes(LocaleStrings.LogMsgDone1)) {
       return styles.successGreen;
     }
     else {

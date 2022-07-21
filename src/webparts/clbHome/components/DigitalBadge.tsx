@@ -349,7 +349,7 @@ export default class DigitalBadge extends TeamsBaseComponent<
 
                 return (
                   <Surface>
-                    <Panel>
+                    <Panel className={dbStyles.panelArea}>
                       <PanelHeader>
                         <div className={dbStyles.digitalBadgePath}>
                           <img src={require("../assets/CMPImages/BackIcon.png")}
@@ -637,7 +637,7 @@ export default class DigitalBadge extends TeamsBaseComponent<
                                     {!this.state.hasAccepted &&
                                       this.state.showAccept && (
                                         <PrimaryButton
-                                          className={primaryButton(contextCSS)}
+                                          className={primaryButton(contextCSS) + " " + dbStyles.acceptBtn}
                                           onClick={this.onUserAcceptance}
                                           ariaLabel={LocaleStrings.AcceptButtonText}
                                           ariaDescription={

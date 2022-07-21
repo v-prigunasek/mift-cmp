@@ -661,6 +661,8 @@ export default class TOTMyDashboard extends React.Component<
                       options={this.state.myTournamentsList}
                       onChange={this.getMyTournamentActions.bind(this)}
                       ariaLabel={LocaleStrings.MyTournamentsLabel + ' list'}
+                      useComboBoxAsMenuWidth={true}
+                      calloutProps={{ className: styles.totMdbComboCallout }}
                     />
                   </Col>
                 )}
@@ -678,6 +680,8 @@ export default class TOTMyDashboard extends React.Component<
                       options={this.state.activeTournamentsList}
                       onChange={this.getActiveTournamentActions.bind(this)}
                       ariaLabel={LocaleStrings.ActiveTournamentLabel + ' list'}
+                      useComboBoxAsMenuWidth={true}
+                      calloutProps={{ className: styles.totMdbComboCallout }}
                     />
                   </Col>
                 )}

@@ -4,7 +4,6 @@ import * as LocaleStrings from 'ClbHomeWebPartStrings';
 import { Callout, Link, Text } from 'office-ui-fabric-react';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import React, { Component } from "react";
-import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import * as Strings from '../constants/strings';
 import styles from "../scss/CMPHome.module.scss";
@@ -49,10 +48,12 @@ export default class Header extends Component<IHeaderProps, HeaderState> {
             onClick={this.homeRedirect}
             title={LocaleStrings.AppLogoToolTip}
           />
-          <span onClick={this.homeRedirect} className={styles.clbHeading} title={LocaleStrings.AppLogoToolTip}>{LocaleStrings.AppHeaderTitleLabel}</span>
+          <div onClick={this.homeRedirect} className={styles.clbHeading} title={LocaleStrings.AppLogoToolTip}>
+            {LocaleStrings.AppHeaderTitleLabel}
+          </div>
         </Navbar.Brand>
-        <Nav.Item className={styles.infoNavItem}>
-          <div className={styles.icon}>
+        <div className={styles.navIconArea}>
+          <div>
             <TooltipHost
               content={LocaleStrings.MoreInfoToolTip}
               delay={2}
@@ -114,9 +115,7 @@ export default class Header extends Component<IHeaderProps, HeaderState> {
               </Callout>
             )}
           </div>
-        </Nav.Item>
-        <Nav.Item>
-          <div className={styles.icon}>
+          <div>
             <a href={Strings.HelpUrl} target="_blank">
               <TooltipHost
                 content={LocaleStrings.SupportToolTip}
@@ -128,9 +127,7 @@ export default class Header extends Component<IHeaderProps, HeaderState> {
               </TooltipHost>
             </a>
           </div>
-        </Nav.Item>
-        <Nav.Item>
-          <div className={styles.fbIconArea}>
+          <div>
             <a href={Strings.FeedbackUrl} target="_blank">
               <TooltipHost
                 content={LocaleStrings.FeedbackToolTip}
@@ -142,7 +139,7 @@ export default class Header extends Component<IHeaderProps, HeaderState> {
               </TooltipHost>
             </a>
           </div>
-        </Nav.Item>
+        </div>
       </Navbar>
     );
   }

@@ -340,6 +340,8 @@ export default class TOTLeaderBoard extends React.Component<
                         options={this.state.myTournamentsList}
                         onChange={this.getMyTournamentActions.bind(this)}
                         ariaLabel={LocaleStrings.MyTournamentsLabel + ' list'}
+                        useComboBoxAsMenuWidth={true}
+                        calloutProps={{ className: styles.totLbComboCallout }}
                       />
                     </Col>
                   )}
@@ -357,6 +359,8 @@ export default class TOTLeaderBoard extends React.Component<
                         options={this.state.activeTournamentsList}
                         onChange={this.getActiveTournamentActions.bind(this)}
                         ariaLabel={LocaleStrings.ActiveTournamentLabel + " list"}
+                        useComboBoxAsMenuWidth={true}
+                        calloutProps={{ className: styles.totLbComboCallout }}
                       />
                     </Col>
                   )}

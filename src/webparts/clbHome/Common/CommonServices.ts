@@ -131,6 +131,36 @@ export default class CommonServices {
       return true;
     });
   }
+
+  //Update multiple items
+  public async updateMultipleItems(listname: string, data: any, arrayOfIds: any): Promise<any> {
+    return new Promise<any>(async (resolve, reject) => {
+
+      try {
+        //Create object for batch
+        const batch = sp.web.createBatch();
+        //Get list context
+        const list = await sp.web.lists.getByTitle(listname);
+        const items = list.items.inBatch(batch);
+
+        for (let itemCount = 0; itemCount < arrayOfIds.length; itemCount++) {
+          items.getById(parseInt(arrayOfIds[itemCount])).inBatch(batch).update(data);
+        }
+        await batch.execute().then(() => {
+          resolve(true);
+        }).catch((error) => {
+          console.error("CommonServices_updateMultipleItems \n", error);
+          reject(false);
+        });
+      }
+      catch (error) {
+        console.error("CommonServices_updateMultipleItems \n", error);
+        reject(false);
+      }
+
+    });
+  }
+
   //create fields in SP lists
   public async createListFields(listname: string, fieldsToCreate: any): Promise<any> {
     return new Promise<any>(async (resolve, reject) => {

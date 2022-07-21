@@ -1,3 +1,82 @@
+.cvDatePickerCallout {
+  .ms-Callout-main {
+    .calendarProps {
+      .ms-DatePicker-picker {
+        .ms-DatePicker-holder {
+          .ms-DatePicker-frame {
+            .ms-DatePicker-wrap {
+              .ms-DatePicker-dayPicker {
+                .ms-DatePicker-header {
+                  .ms-DatePicker-monthComponents {
+                    .ms-DatePicker-navContainer {
+                      button:hover {
+                        background-color: #D0D0D0 !important;
+                        color: #000 !important;
+                        font-weight: 600;
+                      }
+                    }
+                  }
+                }
+
+                .ms-FocusZone {
+                  table {
+                    tr {
+                      th {
+                        background-color: #f6f5f4 !important;
+                        color: #616161 !important;
+                      }
+
+                      td:hover {
+                        background-color: #D0D0D0 !important;
+                        color: #000 !important;
+                        font-weight: 600;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .ms-DatePicker-monthPicker {
+                .ms-DatePicker-header {
+                  .ms-DatePicker-yearComponents {
+                    .ms-DatePicker-navContainer {
+                      button:hover {
+                        background-color: #D0D0D0 !important;
+                        color: #000 !important;
+                        font-weight: 600;
+                      }
+                    }
+                  }
+                }
+
+                .ms-FocusZone {
+                  .ms-DatePicker-monthOption:hover {
+                    background-color: #D0D0D0 !important;
+                    color: #000 !important;
+                    font-weight: 600;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cvEventTypeDropdown {
+  .ms-Callout-main {
+    .ms-FocusZone {
+      button:hover {
+        background-color: #E8E8E8 !important;
+        color: #000;
+      }
+    }
+  }
+}
+
+
 .Championview {
   .main {
     width: 100%;

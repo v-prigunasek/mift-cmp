@@ -74,6 +74,7 @@ declare interface IClbHomeWebPartStrings {
   UserAddedMessage: string;
   PeopleNameGridHeader: string;
   Select: string;
+  SelectAll: string;
   RegionGridHeader: string;
   CountryGridHeader: string;
   GroupGridHeader: string;
@@ -86,6 +87,7 @@ declare interface IClbHomeWebPartStrings {
   NoChampionsMessage: string;
   ChampionApprovedMessage: string;
   ChampionRejectedMessage: string;
+  ProcessingSpinnerLabel: string;
 
   //DigitalBadge
   DigitalBadgePageTitle: string;
@@ -203,7 +205,9 @@ declare interface IClbHomeWebPartStrings {
   ErrorMsgActionsList: string;
   ErrorMsgTournamentActionsList: string;
   LogMsgTournamentExists: string;
+  LogMsgTournamentExists1: string;
   LogMsgDone: string;
+  LogMsgDone1: string;
   LogMsgInvalidTournamentName: string;
   LogMsgInvalidTemplate: string;
   LogMsgMultipleTournaments: string;
@@ -254,6 +258,11 @@ declare interface IClbHomeWebPartStrings {
   EndTournamentSuccessMessage: string;
   EnableTournamentSuccessMessage: string;
   CompleteTournamentSpinnerMessage: string;
+  EnableTournamentSpinnerMessage: string;
+  SearchActiveTournaments: string;
+  SearchPendingTournaments: string;
+  SelectAllLabel: string;
+  NoSearchResults: string;
 
   // TOT LeaderBoard & TOT My Dashboard
   NoActiveParticipantsMessage; string;
