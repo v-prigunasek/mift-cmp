@@ -79,6 +79,7 @@
     "terser": "^5.14.2",
     "@rushstack/loader-raw-script": {
       "loader-utils": "3.0.0"
-    }
+    },
+    "@xmldom/xmldom": ">=0.8.4"
   }
 }
