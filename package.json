@@ -81,28 +81,15 @@
     "@rushstack/loader-raw-script": {
       "loader-utils": "3.0.0"
     },
-    "@rushstack/localization-plugin": {
-      "loader-utils": "1.4.1"
+    "@microsoft/spfx-heft-plugins": {
+      "@rushstack/localization-plugin": {
+        "loader-utils": "1.4.1"
+      }
     },
     "@microsoft/sp-css-loader": {
       "loader-utils": "1.4.1"
     },
     "@microsoft/loader-load-themed-styles": {
-      "loader-utils": "1.4.1"
-    },
-    "@microsoft/spfx-heft-plugins": {
-      "loader-utils": "1.4.1"
-    },
-    "@microsoft/gulp-core-build-webpack": {
-      "loader-utils": "1.4.1"
-    },
-    "@microsoft/sp-build-core-tasks": {
-      "loader-utils": "1.4.1"
-    },
-    "@microsoft/sp-build-web": {
-      "loader-utils": "1.4.1"
-    },
-    "generic-names": {
       "loader-utils": "1.4.1"
     }
   }
