@@ -1476,6 +1476,8 @@ export default class ClbHome extends React.Component<
                 siteUrl={this.props.siteUrl}
                 context={this.props.context}
                 onClickBack={this.callBackFunction}
+                isPendingChampionApproval={this.state.isChampionApprovalPending}
+                isPendingEventApproval={this.state.isEventApprovalPending}
               />
             )
           }

@@ -105,7 +105,7 @@ define([], function () {
     "EventsSubmissionSuccessMessage": "Evento(s) registrado(s) correctamente.",
     "EventsSubmitMessage": "Cuando hayas terminado de agregar eventos, haz clic en el botón Enviar para guardar.",
     "EventsTrackListLabel": "Lista de seguimiento de eventos",
-    "EventSubmissionPendingMessage": "Eventos enviados para la aprobación del administrador. Los puntos se concederán después de la aprobación.",
+    "EventSubmissionPendingMessage": "Eventos enviados para aprobación. Los puntos se concederán una vez que se aprueben los eventos.",
     "EventTrackListToolTip": "Acceso a la lista de seguimiento de eventos",
     "EventTypeGridLabel": "Tipo",
     "EventTypeGridLabelPlaceHolder": "Seleccionar tipo de evento",

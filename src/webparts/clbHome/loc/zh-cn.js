@@ -105,7 +105,7 @@ define([], function () {
     "EventsSubmissionSuccessMessage": "已成功记录事件。",
     "EventsSubmitMessage": "添加完事件后，请单击“提交”按钮进行保存。",
     "EventsTrackListLabel": "事件跟踪列表",
-    "EventSubmissionPendingMessage": "已提交事件供经理批准。批准后将奖励积分。",
+    "EventSubmissionPendingMessage": "已提交事件以供审批。一旦事件获得批准，将授予积分。",
     "EventTrackListToolTip": "访问事件跟踪列表",
     "EventTypeGridLabel": "类型",
     "EventTypeGridLabelPlaceHolder": "选择事件类型",

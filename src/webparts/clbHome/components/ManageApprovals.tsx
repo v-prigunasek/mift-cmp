@@ -1,4 +1,4 @@
-import { Pivot, PivotItem, PivotLinkFormat } from '@fluentui/react';
+import { IPivotItemProps, Pivot, PivotItem, PivotLinkFormat } from '@fluentui/react';
 import { WebPartContext } from "@microsoft/sp-webpart-base";
 import * as LocaleStrings from 'ClbHomeWebPartStrings';
 import React, { Component } from 'react';
@@ -14,6 +14,8 @@ export interface IManageApprovalsProps {
     context: WebPartContext;
     siteUrl: string;
     onClickBack: Function;
+    isPendingChampionApproval: boolean;
+    isPendingEventApproval: boolean;
 }
 export interface IManageApprovalsState { }
 export default class ManageApprovals extends Component<IManageApprovalsProps, IManageApprovalsState> {
@@ -26,6 +28,37 @@ export default class ManageApprovals extends Component<IManageApprovalsProps, IM
         commonServiceManager = new commonServices(
             this.props.context,
             this.props.siteUrl
+        );
+    }
+
+    _customRenderer(
+        link?: IPivotItemProps,
+        defaultRenderer?: (link?: IPivotItemProps) => JSX.Element | null,
+    ): JSX.Element | null {
+        if (!link || !defaultRenderer) {
+            return null;
+        }
+        return (
+            <span>
+                <span>&nbsp;&nbsp;{link.headerText}</span>
+                <img src={require(`../assets/CMPImages/BellIcon.svg`)} className={styles.indicatorIcon} />
+                {defaultRenderer({ ...link, headerText: undefined })}
+            </span>
+        );
+    }
+
+    _customRendererNoIcon(
+        link?: IPivotItemProps,
+        defaultRenderer?: (link?: IPivotItemProps) => JSX.Element | null,
+    ): JSX.Element | null {
+        if (!link || !defaultRenderer) {
+            return null;
+        }
+        return (
+            <span>
+                <span>&nbsp;&nbsp;{link.headerText}&nbsp;&nbsp;</span>
+                {defaultRenderer({ ...link, headerText: undefined })}
+            </span>
         );
     }
 
@@ -57,6 +90,7 @@ export default class ManageApprovals extends Component<IManageApprovalsProps, IM
                         headerText={LocaleStrings.ChampionsListPageTitle}
                         itemKey="0"
                         headerButtonProps={{ title: LocaleStrings.ChampionsListPageTitle }}
+                        onRenderItemLink={this.props.isPendingChampionApproval ? this._customRenderer : this._customRendererNoIcon}
                     >
                         <ApproveChampion
                             context={this.props.context}
@@ -67,6 +101,7 @@ export default class ManageApprovals extends Component<IManageApprovalsProps, IM
                         headerText={LocaleStrings.ChampionActivitiesLabel}
                         itemKey="1"
                         headerButtonProps={{ title: LocaleStrings.ChampionActivitiesLabel }}
+                        onRenderItemLink={this.props.isPendingEventApproval ? this._customRenderer : this._customRendererNoIcon}
                     >
                         <ChampionsActivities
                             context={this.props.context}

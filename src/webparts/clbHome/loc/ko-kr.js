@@ -105,7 +105,7 @@ define([], function () {
     "EventsSubmissionSuccessMessage": "이벤트가 성공적으로 기록되었습니다.",
     "EventsSubmitMessage": "이벤트 추가가 완료되면 [제출] 버튼을 클릭하여 저장하세요.",
     "EventsTrackListLabel": "이벤트 트랙킹 목록",
-    "EventSubmissionPendingMessage": "관리자 승인을 위해 제출된 이벤트입니다. 포인트는 승인 후 지급됩니다.",
+    "EventSubmissionPendingMessage": "승인을 위해 제출된 이벤트입니다. 이벤트가 승인되면 포인트가 지급됩니다.",
     "EventTrackListToolTip": "이벤트 트랙킹 목록에 액세스하는 중",
     "EventTypeGridLabel": "유형",
     "EventTypeGridLabelPlaceHolder": "이벤트 유형 선택",

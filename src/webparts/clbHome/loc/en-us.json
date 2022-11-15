@@ -141,7 +141,7 @@
   "_SelectDate.comment": "aria-label for accessibility",
   "NotesPlaceholder": "Max 200 characters",
   "_NotesPlaceholder.comment": "Placeholder text for notes text field",
-  "EventSubmissionPendingMessage": "Event(s) submitted for manager approval. Points will be awarded after the approval.",
+  "EventSubmissionPendingMessage": "Event(s) submitted for approval. Points will be awarded once the event(s) are approved.",
   "_EventSubmissionPendingMessage.comment": "Message to be displayed when an event is yet to be approved",
   "EventsSubmissionSuccessMessage": "Event(s) recorded successfully.",
   "_EventsSubmissionSuccessMessage.comment": "Message to be displayed when an event is auto approved",

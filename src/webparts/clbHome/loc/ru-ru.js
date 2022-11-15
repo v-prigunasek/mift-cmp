@@ -105,7 +105,7 @@ define([], function () {
     "EventsSubmissionSuccessMessage": "События успешно записаны.",
     "EventsSubmitMessage": "По завершении добавления событий нажмите кнопку \"Отправить\", чтобы сохранить.",
     "EventsTrackListLabel": "Список отслеживания событий",
-    "EventSubmissionPendingMessage": "Событие(я) отправлены на утверждение руководителем. Баллы начисляются после утверждения.",
+    "EventSubmissionPendingMessage": "События отправлены на утверждение. Баллы будут присвоены после утверждения событий.",
     "EventTrackListToolTip": "Доступ к списку отслеживания событий",
     "EventTypeGridLabel": "Тип",
     "EventTypeGridLabelPlaceHolder": "Выберите тип события",

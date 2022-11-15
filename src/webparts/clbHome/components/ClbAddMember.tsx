@@ -59,7 +59,7 @@ interface IState {
   UserDetails: Array<IUserDetail>;
   selectedusers: Array<any>;
   siteUrl: string;
-  coutries: Array<any>;
+  countries: Array<any>;
   regions: Array<any>;
   groups: Array<any>;
   focusAreas: Array<any>;
@@ -96,7 +96,7 @@ class ClbAddMember extends React.Component<IClbAddMemberProps, IState> {
       updatedMessage: "",
       UserDetails: [],
       selectedusers: [],
-      coutries: [],
+      countries: [],
       regions: [],
       groups: [],
       focusAreas: [],
@@ -151,11 +151,11 @@ class ClbAddMember extends React.Component<IClbAddMemberProps, IState> {
               )
               // tslint:disable-next-line: no-shadowed-variable
               .then((response: SPHttpClientResponse) => {
-                response.json().then((coutries) => {
-                  if (!coutries.error) {
+                response.json().then((countries) => {
+                  if (!countries.error) {
                     this.setState({
                       regions: regions.Choices,
-                      coutries: coutries.Choices,
+                      countries: countries.Choices,
                     });
                   }
                 });
@@ -555,11 +555,13 @@ class ClbAddMember extends React.Component<IClbAddMemberProps, IState> {
   }
 
   public options = (optionArray: any) => {
-    let myoptions = [];
-    myoptions.push({ key: "All", text: "All" });
-    optionArray.forEach((element: any) => {
-      myoptions.push({ key: element, text: element });
-    });
+    let myoptions = [];    
+    if (optionArray !== undefined) {
+      myoptions.push({ key: "All", text: "All" });
+      optionArray.forEach((element: any) => {
+        myoptions.push({ key: element, text: element });
+      });
+    }
     return myoptions;
   }
 
@@ -644,7 +646,7 @@ class ClbAddMember extends React.Component<IClbAddMemberProps, IState> {
                           <Col md={enabledDropdownCount < 3 ? 4 : 3} sm={8}>
                             <Dropdown
                               onChange={(event: any, selectedOption: any) => this.filterUsers("country", selectedOption)}
-                              options={this.options(this.state.coutries)}
+                              options={this.options(this.state.countries)}
                               ariaLabel={LocaleStrings.CountryPlaceholder}
                               className={styles.addMemberDropdown}
                               calloutProps={{ className: "addMemberDropdownCallout" }}

@@ -147,10 +147,12 @@ export default class Sidebar extends React.Component<ISidebarStateProps, IState>
   //getting members details from membelist with all columns
   public options = (optionArray: any) => {
     let myoptions = [];
-    myoptions.push({ key: "All", text: "All" });
-    optionArray.forEach((element: any) => {
-      myoptions.push({ key: element, text: element });
-    });
+    if (optionArray !== undefined) {
+      myoptions.push({ key: "All", text: "All" });
+      optionArray.forEach((element: any) => {
+        myoptions.push({ key: element, text: element });
+      });
+    }
     return myoptions;
   }
 

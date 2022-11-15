@@ -105,7 +105,7 @@ define([], function () {
     "EventsSubmissionSuccessMessage": "אירועים נרשמו בהצלחה.",
     "EventsSubmitMessage": "כשתסיים להוסיף אירועים, לחץ על לחצן 'שלח' כדי לשמור.",
     "EventsTrackListLabel": "רשימת מעקב אחר אירועים",
-    "EventSubmissionPendingMessage": "אירועים שנשלחו לאישור מנהל. הנקודות יוענקו לאחר האישור.",
+    "EventSubmissionPendingMessage": "אירועים שנשלחו לאישור. נקודות יוענקו ברגע שהאירועים יאושרו.",
     "EventTrackListToolTip": "גישה לרשימת מעקב אחר אירועים",
     "EventTypeGridLabel": "סוג",
     "EventTypeGridLabelPlaceHolder": "בחר סוג אירוע",

@@ -105,7 +105,7 @@ define([], function () {
     "EventsSubmissionSuccessMessage": "イベントが正常に記録されました。",
     "EventsSubmitMessage": "イベントの追加が完了したら、[送信] ボタンをクリックして保存してください。",
     "EventsTrackListLabel": "イベント追跡リスト",
-    "EventSubmissionPendingMessage": "マネージャーの承認のために送信されたイベント。ポイントは承認後に付与されます。",
+    "EventSubmissionPendingMessage": "承認のために送信されたイベント。ポイントは、イベントが承認されると付与されます。",
     "EventTrackListToolTip": "イベント追跡リストにアクセスしています",
     "EventTypeGridLabel": "型",
     "EventTypeGridLabelPlaceHolder": "イベントの種類の選択",
