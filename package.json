@@ -92,6 +92,18 @@
     },
     "@microsoft/spfx-heft-plugins": {
       "loader-utils": "1.4.1"
+    },
+    "@microsoft/gulp-core-build-webpack": {
+      "loader-utils": "1.4.1"
+    },
+    "@microsoft/sp-build-core-tasks": {
+      "loader-utils": "1.4.1"
+    },
+    "@microsoft/sp-build-web": {
+      "loader-utils": "1.4.1"
+    },
+    "generic-names": {
+      "loader-utils": "1.4.1"
     }
   }
 }
