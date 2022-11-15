@@ -49,7 +49,7 @@
     "ajv": "^6.12.5",
     "eslint-plugin-react-hooks": "4.3.0",
     "gulp": "4.0.2",
-    "loader-utils": ">=3.2.0"
+    "loader-utils": "^3.2.0"
   },
   "overrides": {
     "immer": "9.0.6",
@@ -77,9 +77,21 @@
     "serialize-javascript": ">=3.1.0",
     "shell-quote": "^1.7.3",
     "terser": "^5.14.2",
+    "@xmldom/xmldom": ">=0.8.4",
     "@rushstack/loader-raw-script": {
       "loader-utils": "3.0.0"
     },
-    "@xmldom/xmldom": ">=0.8.4"
+    "@rushstack/localization-plugin": {
+      "loader-utils": "1.4.1"
+    },
+    "@microsoft/sp-css-loader": {
+      "loader-utils": "1.4.1"
+    },
+    "@microsoft/loader-load-themed-styles": {
+      "loader-utils": "1.4.1"
+    },
+    "@microsoft/spfx-heft-plugins": {
+      "loader-utils": "1.4.1"
+    }
   }
 }
