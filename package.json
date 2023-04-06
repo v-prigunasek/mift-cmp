@@ -78,6 +78,18 @@
     "shell-quote": "^1.7.3",
     "terser": "^5.14.2",
     "@xmldom/xmldom": ">=0.8.4",
+    "json5": ">=2.2.2",
+    "jszip": ">=3.8.0",
+    "debug": ">=2.6.9",
+    "webpack": ">=5.76.0",
+    "ms": ">=2.0.0",
+    "jsdom": ">=16.5.0",
+    "postcss": ">=8.2.13",
+    "validator": ">=13.7.0",
+    "node-notifier": ">=8.0.1",
+    "yargs-parser": ">=5.0.1",
+    "mime": ">=1.4.1",
+    "decode-uri-component": ">=0.2.1",
     "@rushstack/loader-raw-script": {
       "loader-utils": "3.2.1"
     },
